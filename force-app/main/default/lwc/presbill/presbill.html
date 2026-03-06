@@ -1,0 +1,166 @@
+<template>
+    <div class="main-container">
+
+
+        <lightning-card title="🏥 Hospital Billing" class="main-card">
+            <div class="slds-p-around_medium">
+
+
+                <!-- Appointment -->
+                <div class="section appointment-section">
+                    <h3>📅 Appointment Details</h3>
+
+
+                    <lightning-combobox
+                        label="Select Appointment"
+                        options={appointmentOptions}
+                        value={selectedAppointment}
+                        onchange={handleAppointmentChange}>
+                    </lightning-combobox>
+
+
+                    <template if:true={appointmentDetails}>
+                        <div class="info-box">
+                            <p><strong>Patient:</strong> {appointmentDetails.patient}</p>
+                            <p><strong>Doctor:</strong> {appointmentDetails.doctor}</p>
+                            <p><strong>Date:</strong> {appointmentDetails.date}</p>
+                        </div>
+                    </template>
+                </div>
+
+
+                <!-- Prescription -->
+                <div class="section prescription-section">
+                    <h3>💊 Prescription Details</h3>
+
+
+                    <template for:each={prescriptions} for:item="item" for:index="index">
+                        <div key={item.id} class="slds-grid slds-gutters slds-m-bottom_small">
+
+
+                            <div class="slds-col">
+                                <lightning-input label="Medicine"
+                                    value={item.medicine}
+                                    data-index={index}
+                                    data-field="medicine"
+                                    onchange={handlePrescriptionChange}>
+                                </lightning-input>
+                            </div>
+
+
+                            <div class="slds-col">
+                                <lightning-input label="Dosage"
+                                    value={item.dosage}
+                                    data-index={index}
+                                    data-field="dosage"
+                                    onchange={handlePrescriptionChange}>
+                                </lightning-input>
+                            </div>
+
+
+                            <div class="slds-col">
+                                <lightning-input type="number"
+                                    label="Amount"
+                                    value={item.amount}
+                                    data-index={index}
+                                    data-field="amount"
+                                    onchange={handlePrescriptionChange}>
+                                </lightning-input>
+                            </div>
+
+
+                            <div class="slds-col slds-align-bottom">
+                                <lightning-button label="Remove"
+                                    variant="destructive"
+                                    data-index={index}
+                                    onclick={removePrescription}>
+                                </lightning-button>
+                            </div>
+                        </div>
+                    </template>
+
+
+                    <lightning-button label="➕ Add Medicine"
+                        variant="brand"
+                        onclick={addPrescription}>
+                    </lightning-button>
+                </div>
+
+
+                <!-- Cost Section -->
+                <div class="section cost-section">
+                    <h3>💰 Cost Details</h3>
+
+
+                    <lightning-input type="number" label="Consultation Fee"
+                        value={consultationFee}
+                        onchange={handleChange}
+                        data-field="consultationFee">
+                    </lightning-input>
+
+
+                    <lightning-input type="number" label="Medicine Cost"
+                        value={medicineCost}
+                        disabled>
+                    </lightning-input>
+
+
+                    <lightning-input type="number" label="Discount (%)"
+                        value={discount}
+                        onchange={handleChange}
+                        data-field="discount">
+                    </lightning-input>
+
+
+                    <lightning-input type="number" label="Tax (%)"
+                        value={tax}
+                        onchange={handleChange}
+                        data-field="tax">
+                    </lightning-input>
+
+
+                    <h2 class="total-highlight">
+                        Total Amount: ₹ {totalAmount}
+                    </h2>
+                </div>
+
+
+                <!-- Payment -->
+                <div class="section payment-section">
+                    <h3>💳 Payment Details</h3>
+
+
+                    <lightning-combobox
+                        label="Payment Mode"
+                        options={paymentModeOptions}
+                        value={paymentMode}
+                        onchange={handleChange}
+                        data-field="paymentMode">
+                    </lightning-combobox>
+
+
+                    <lightning-combobox
+                        label="Payment Status"
+                        options={paymentStatusOptions}
+                        value={paymentStatus}
+                        onchange={handleChange}
+                        data-field="paymentStatus">
+                    </lightning-combobox>
+
+
+                    <br/>
+
+
+                    <lightning-button label="💾 Save Billing"
+                        variant="brand"
+                        onclick={handleSave}>
+                    </lightning-button>
+                </div>
+
+
+            </div>
+        </lightning-card>
+
+
+    </div>
+</template>

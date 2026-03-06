@@ -1,0 +1,159 @@
+<template>
+    <div class="page-container">
+
+        <!-- ================= DOCTOR LIST ================= -->
+        <div class="doctor-list">
+            <template for:each={doctors} for:item="doc">
+                <div class="doctor-item
+                 {doc.Id === selectedDoctorId ? 'selected-doctor' : ''}"
+                     key={doc.Id}
+                     data-id={doc.Id}
+                     onclick={selectDoctor}>
+                    <img src={doc.Photo_URL__c} alt="Doctor" />
+                    <h4>{doc.Name}</h4>
+                    <p>{doc.Specialization__c}</p>
+                </div>
+            </template>
+        </div>
+
+        <!-- ADD Patient -->
+        <div class="add-Patient-btn">
+            <lightning-button
+                label="Add Patient"
+                variant="brand"
+                onclick={handleAddPatient}>
+            </lightning-button>
+
+            <!-- Generate Bill button next to Add Patient -->
+        <lightning-button
+            label="Generate Bill"
+            onclick={navigateToPresBill}>
+        </lightning-button>
+        </div>
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <div class="appointment-wrapper">
+
+            <!-- LEFT : SELECTED DOCTOR -->
+            <div class="doctor-card">
+                <template if:true={selectedImage}>
+                    <img src={selectedImage} alt="Doctor Image" />
+                </template>
+
+                <h3>{selectedDoctor}</h3>
+                <p class="spec">{selectedSpec}</p>
+                <p>Experience: {selectedExperience} years</p>
+            </div>
+
+            <!-- RIGHT : BOOK FORM -->
+            <div class="form-card">
+
+                <h2>Book Appointment</h2>
+
+                <!-- DOCTOR DETAILS -->
+                <div class="section">
+                    <h4>Doctor Details</h4>
+
+                    <label>Doctor Name</label>
+                    <input type="text" value={selectedDoctor} disabled />
+
+                    <label>Specialization</label>
+                    <input type="text" value={selectedSpec} disabled />
+                </div>
+
+                <!-- CONTINUE -->
+                <button class="primary-btn" onclick={showPatientSection}>
+                    Continue / Book Appointment
+                </button>
+
+                <!-- ================= PATIENT DETAILS ================= -->
+                <template if:true={showPatient}>
+                    <div class="section patient-section">
+                        <h4>Patient Details</h4>
+
+                        <!-- EXISTING PATIENT -->
+                        <label>Select Patient</label>
+                        <select onchange={handlePatientChange}>
+                            <option value="">-- Select Patient --</option>
+                            <template for:each={patients} for:item="p">
+                                <option key={p.Id} value={p.Id}>{p.Name}</option>
+                            </template>
+                        </select>
+
+                        <!-- PHONE   -->
+
+                        <lightning-input 
+                             label="Phone"
+                             value={phone}
+                             readonly>
+                        </lightning-input>
+
+                        <!-- DATE -->
+
+                       <lightning-input
+                           type="date"
+                           label="Appointment Date"
+                           onchange={handleDateChange}>
+                       </lightning-input>
+
+
+                        <!-- SHIFT DISPLAY -->
+                 <div class="field">
+                     <label>Doctor Shift</label>
+                <div class="readonly-box">
+                     {selectedShift}
+               </div>
+                 </div>
+
+
+                    
+
+                        <!-- TIME SLOT -->
+                        <lightning-combobox
+                            label="Select Time"
+                            value={selectedTime}
+                            options={timeSlots}
+                            onchange={handleTimeChange}
+                            placeholder="Choose Time">
+                        </lightning-combobox>
+
+
+
+        <template if:true={isLoading}>
+               <div class="spinner-backdrop">
+                     <lightning-spinner
+                       alternative-text="Loading"
+                        size="medium">
+                     </lightning-spinner>
+               </div>
+        </template>
+
+
+                        <!-- CONFIRM -->
+
+                        <button 
+                           class="confirm-btn"
+                           onclick={confirmAppointment}
+                          disabled={isLoading}>
+                               Confirm Appointment
+                        </button>
+
+
+                        <template for:each={appointments} for:item="app">
+                           <div key={app.Id}>
+                             <span>{app.Patient__r.Name} - {app.Appointment_Date__c}</span>
+                                     <lightning-button
+                                       label="Generate Bill"
+                                       data-appointment-id={app.Id}
+                                       onclick={navigateToPresBill}>
+                                     </lightning-button>
+                             </div>
+                         </template>
+    
+                    </div>
+                </template>
+
+            </div>
+        </div>
+    </div>
+</template>

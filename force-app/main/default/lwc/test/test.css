@@ -1,0 +1,234 @@
+/* ================= PAGE ================= */
+.page-container {
+    padding: 16px;
+    background: #f4f6f9;
+    font-family: "Salesforce Sans", Arial, sans-serif;
+}
+
+/* ================= DOCTOR LIST ================= */
+.doctor-list {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.doctor-item {
+    min-width: 150px;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #d8dde6;
+    transition: all 0.25s ease;
+}
+
+.doctor-item img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.doctor-item h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 4px 0;
+}
+
+.doctor-item p {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.doctor-item.selected-doctor {
+    border: 2px solid #0176d3;
+    box-shadow: 0 0 0 3px rgba(1,118,211,0.15);
+    background: #f0f8ff;
+}
+
+
+.doctor-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    border-color: #0176d3;
+}
+
+/* ================= ADD DOCTOR ================= */
+.add-Patient-btn {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* ================= MAIN WRAPPER ================= */
+.appointment-wrapper {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 20px;
+}
+
+/* ================= DOCTOR CARD ================= */
+.doctor-card {
+    background: linear-gradient(135deg, #0176d3, #2e9afe);
+    color: white;
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.doctor-card img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 4px solid #ffffff;
+}
+
+.doctor-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.doctor-card .spec {
+    font-size: 14px;
+    opacity: 0.95;
+}
+
+.doctor-card p {
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+/* ================= FORM CARD ================= */
+.form-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 18px;
+    border: 1px solid #d8dde6;
+}
+
+.form-card h2 {
+    margin-bottom: 16px;
+    color: #032d60;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    margin-bottom: 16px;
+}
+
+
+.readonly-box {
+    padding: 10px;
+    background: #f3f3f3;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+.section h4 {
+    margin-bottom: 10px;
+    color: #032d60;
+}
+
+/* 🔥 THIS IS THE IMPORTANT PART */
+.section.patient-section {
+    background: #f9fbff;
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid #d8dde6;
+}
+
+option:disabled {
+    color: #9ca3af;
+    background: #f3f4f6;
+}
+
+
+/* ================= INPUTS ================= */
+label {
+    display: block;
+    margin: 10px 0 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #d8dde6;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #0176d3;
+}
+
+/* ================= BUTTONS ================= */
+.primary-btn {
+    width: 100%;
+    margin: 12px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background: #0176d3;
+    color: white;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background: rgb(6, 45, 163) ;
+}
+
+.confirm-btn {
+   width: 100%;
+    margin: 12px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background: #0176d3;
+    color: white;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+ 
+.confirm-btn:hover {
+    background:rgb(6, 45, 163) ;
+}
+
+/*lightning-combobox {
+    margin-bottom: 10px;
+} */
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .appointment-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .doctor-list {
+        justify-content: start;
+    }
+
+
+    .spinner-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+}
