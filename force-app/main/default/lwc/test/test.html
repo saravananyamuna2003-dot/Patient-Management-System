@@ -4,15 +4,17 @@
         <!-- ================= DOCTOR LIST ================= -->
         <div class="doctor-list">
             <template for:each={doctors} for:item="doc">
-                <div class="doctor-item
-                 {doc.Id === selectedDoctorId ? 'selected-doctor' : ''}"
-                     key={doc.Id}
-                     data-id={doc.Id}
-                     onclick={selectDoctor}>
-                    <img src={doc.Photo_URL__c} alt="Doctor" />
-                    <h4>{doc.Name}</h4>
-                    <p>{doc.Specialization__c}</p>
-                </div>
+                  <div class="doctor-item"
+                       key={doc.Id}
+                       data-id={doc.Id}
+                       onclick={selectDoctor}>
+
+                    <img src={doctor.Doc_URL__c} alt="Doctor-img"/>
+
+                        <h4>{doc.Name}</h4>
+                        <p>{doc.Specialization__c}</p>
+
+                   </div>
             </template>
         </div>
 
