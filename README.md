@@ -32,13 +32,13 @@ Lightning Web Components (LWC) and Apex.
 
 | Home | Booking | Booking2 |
 |------|---------|----------|
-| ![](screenshots/home.png) | ![](screenshots/booking1.png) | ![](screenshots/booking2.png) |
+| ![](screenshot/home.png) | ![](screenshot/booking1.png) | ![](screenshot/booking2.png) |
 
 | Appointment | Prescription | Billing |
 |-------------|-------------|--------|
-| ![](screenshots/appointment.png) | ![](screenshots/prescription.png) | ![](screenshots/billing.png) |
+| ![](screenshot/appointment.png) | ![](screenshot/prescription.png) | ![](screenshot/billing.png) |
 
 | Save |
 |------|
-| ![](screenshots/save.png) |
+| ![](screenshot/save.png) |
 
