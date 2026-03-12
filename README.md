@@ -28,5 +28,17 @@ Lightning Web Components (LWC) and Apex.
 - Email notifications
 - AI disease prediction
 
-## PROJECT SCREENSHORT
+## Project Screenshots
+
+| Home | Booking | Booking2 |
+|------|---------|----------|
+| ![](screenshots/home.png) | ![](screenshots/booking1.png) | ![](screenshots/booking2.png) |
+
+| Appointment | Prescription | Billing |
+|-------------|-------------|--------|
+| ![](screenshots/appointment.png) | ![](screenshots/prescription.png) | ![](screenshots/billing.png) |
+
+| Save |
+|------|
+| ![](screenshots/save.png) |
 
