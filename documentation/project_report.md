@@ -44,7 +44,7 @@ The business logic layer is implemented using Apex controllers. Apex handles the
 The data layer consists of Salesforce custom objects that store information such as patient details, appointment records, prescriptions, and billing data.
 
 ### 5.4 Architecture Diagram
-![System Architecture Diagram](C:/Users/arthi/.gemini/antigravity/brain/a6849b3d-59b8-4840-a459-f196f4f6706c/architecture_diagram_1773295074722.png)
+![System-Architecture.png]
 
 ## 6. MODULES OF THE SYSTEM
 The Patient Management System consists of several functional modules:
