@@ -8,5 +8,6 @@
         <target>lightning__RecordPage</target>
         <target>lightningCommunity__Page</target>
         <target>lightning__UrlAddressable</target> 
+        <target>lightningCommunity__Default</target>
     </targets>
 </LightningComponentBundle>
