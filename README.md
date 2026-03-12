@@ -27,3 +27,6 @@ Lightning Web Components (LWC) and Apex.
 - Online payment integration
 - Email notifications
 - AI disease prediction
+
+## PROJECT SCREENSHORT
+
