@@ -83,6 +83,11 @@ The Patient Management System consists of several functional modules:
 - AI-based medical recommendation systems (Einstein AI).
 - Patient self-service portal for direct booking.
 
+- ## 👩‍💻 Authors
+
+- **Aarthi Aditi** – Salesforce Developer  
+- **Saravanan Name** – Salesforce Developer
+
 ## 10. PROJECT WORKFLOW
 The system follows a structured workflow to ensure smooth interaction between the UI, logic, and database.
 
