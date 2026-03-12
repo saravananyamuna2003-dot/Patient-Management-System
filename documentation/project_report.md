@@ -85,8 +85,8 @@ The Patient Management System consists of several functional modules:
 
 - ## 👩‍💻 Authors
 
-- **Aarthi ** – Salesforce Developer  
-- **Saravanan ** – Salesforce Developer
+- Aarthi     – Salesforce Developer  
+- Saravanan  – Salesforce Developer
 
 ## 10. PROJECT WORKFLOW
 The system follows a structured workflow to ensure smooth interaction between the UI, logic, and database.
